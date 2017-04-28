@@ -29,6 +29,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.anything;
 
 /**
  * This test demos a user clicking on a GridView item in MenuActivity which opens up the
@@ -52,7 +53,7 @@ public class MenuActivityScreenTest {
 
     @Test
     public void clickGridViewItem_OpensOrderActivity() {
-        onData(withId(R.id.tea_grid_view)).onChildView(withText("Green Tea")).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(1).perform(click());
         onView(withId(R.id.tea_name_text_view)).check(matches(withText("Green Tea")));
     }
 
