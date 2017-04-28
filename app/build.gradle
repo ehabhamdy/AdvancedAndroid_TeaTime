@@ -29,5 +29,6 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
 
     // TODO (5) Add build dependencies required to use Espresso-Intents
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
 
 }
